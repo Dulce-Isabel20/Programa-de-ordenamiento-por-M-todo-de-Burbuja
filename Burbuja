@@ -1,0 +1,45 @@
+//Metodo Burbuja
+
+#include<iostream>
+#include<conio.h>
+
+using namespace std;
+
+int main(){
+	int num[10] = {4,21,56,-4,456,98,76,76,524,-587};
+	int a,x,aux;
+	int i=0,c=0;
+	
+	for(a=0;a<10;a++){
+		for(x=0;x<9;x++){
+			if(num[x]>num[x+1]){
+				aux=num[x+1];
+				num[x+1]=num[x];
+				num[x]=aux;
+				i=i+1;	
+			}
+			else{
+				c=c+1;	
+			}
+		}	
+	}
+	
+	cout<<"Orden Ascendente: ";
+	for(int a=0;a<=9;a++){
+		printf("%d\t",num[a]);
+	}
+	cout<<"\nComparaciones:"<<c+i;
+	cout<<"\nIntercambios:"<<i;
+
+
+	cout<<"\nOrden Descendente:";
+	for(int a=9;a>=0;a--){
+		printf("%d\t",num[a]);
+	}
+	cout<<"\nComparaciones "<<c+i;
+	cout<<"\nIntercambios "<<i;
+	
+
+	getch();
+	return 0;
+}
